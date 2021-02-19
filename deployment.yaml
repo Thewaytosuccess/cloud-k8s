@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: cloud-k8s
+spec:
+  selector:
+    matchLabels:
+      app: cloud-k8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: cloud-k8s
+    spec:
+      containers:
+        - name: cloud-k8s
+          image: thewaytosuccess/repo01:cloud-k8s
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
