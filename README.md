@@ -1,9 +1,13 @@
-**kubernetes/k8s使用手册**~~~~
+**kubernetes/k8s使用手册**
+
 1._编写代码,本地启动能否正常运行_；
+
 2._编译打包，pom继承parent，并且添加打包插件_:
   `mvn clean package -Dmaven.test.skip=true`
+  
   --测试jar能否正常启动
   `java -jar cloud-k8s.jar`
+  
   --如果打成war，要将war包移动到tomcat/webapps目录下
 
 3._编写Dockerfile_;
