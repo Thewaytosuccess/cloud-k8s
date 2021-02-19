@@ -1,14 +1,14 @@
-1.编写代码,本地启动能否正常运行；
-2.编译打包，pom继承parent，并且添加打包插件:
-  mvn clean package -Dmaven.test.skip=true
+1._编写代码,本地启动能否正常运行_；
+2._编译打包，pom继承parent，并且添加打包插件_:
+  `mvn clean package -Dmaven.test.skip=true`
   --测试jar能否正常启动
-  java -jar cloud-k8s.jar
+  `java -jar cloud-k8s.jar`
   --如果打成war，要将war包移动到tomcat/webapps目录下
 
-3.编写Dockerfile;
+3._编写Dockerfile_;
 
-4.构建本地Docker镜像：
-  docker build --tag=cloud-k8s:latest .
+4._构建本地Docker镜像_：
+  `docker build --tag=cloud-k8s:latest .`
   --测试镜像能否运行
   docker run -d -p 8080:8080 cloud-k8s
   curl localhost:8080
