@@ -21,6 +21,7 @@
   `curl localhost:8080`
 
 5._给本地镜像打标签，并上传镜像到DockerHub_:
+
   `docker tag cloud-k8s:latest thewaytosuccess/repo01:cloud-k8s`
   
   `docker login -u root -p root`
@@ -30,6 +31,7 @@
 6._创建控制器deployment，并且由控制器自动创建pod_：
 
   `kubectl run cloud-k8s --image=thewaytosuccess/repo01:cloud-k8s --port=8080 --image-pull-policy=IfNotPresent`
+  
   --镜像拉取策略：IfNotPresent/Always/Never;
 
 7._查看pod是否创建成功_：
@@ -56,6 +58,7 @@
   `kubectl logs -f --tail=10 POD_NAME [-n NAMESPACE=default]`
 
 11._删除_：
+
   `kubectl delete deployment cloud-k8s`
   
   `kubectl delete pod POD_NAME`
@@ -63,6 +66,7 @@
   `kubectl delete service SERVICE_NAME`
 
 12._通过yaml创建deployment/service_：
+
   `kubectl create -f service.yaml`
   
   `kubectl create -f deployment.yaml`
@@ -76,9 +80,8 @@
 15._启动minikube_:
   `minikube start --registry-mirror=http://registry.docker-cn.com`
   
-  `minikube stop`
-
 16._docker相关指令_：
+
    `docker search mysql`
    
    `docker pull hub.c.163.com/library/mysql`
@@ -93,7 +96,6 @@
    
    `docker rmi mysql`
 
-   --进入容器内部
    `docker ps [-a]`
    
    `docker exec -it CONTAINER_ID /bin/bash`
