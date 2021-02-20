@@ -16,6 +16,9 @@ public class HelloWordController {
     @Autowired
     private DiscoveryClient client;
 
+    @Autowired
+    private K8sConfiguration configuration;
+
     @GetMapping("/")
     public String hello(){
         return "hello world by k8s!";
@@ -24,5 +27,10 @@ public class HelloWordController {
     @GetMapping("/services")
     public List<String> getServices(){
         return client.getServices();
+    }
+
+    @GetMapping("/config")
+    public String getConfig(){
+        return configuration.getHello()+","+configuration.getConfig();
     }
 }

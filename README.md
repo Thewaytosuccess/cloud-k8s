@@ -99,6 +99,14 @@
    `docker ps [-a]`
    
    `docker exec -it CONTAINER_ID /bin/bash`
+   
+17._创建configMap,可以根据文件(夹)创建_:
+
+   `kubectl create configmap config-application --from-file=test.properties`
+   
+   `kubectl describe configmap config-application`
+   
+   `kubectl get configmap config-application -o yaml`
 
 
 
